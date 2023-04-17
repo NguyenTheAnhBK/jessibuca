@@ -91,17 +91,17 @@
     <div class="container-shell">
         <div id="container"></div>
         <div class="input">
-            <div>输入URL：</div>
+            <div>URL: </div>
             <input
                 autocomplete="on"
                 id="playUrl"
                 value=""
             />
-            <button id="play">播放</button>
-            <button id="pause" style="display: none">停止</button>
+            <button id="play">play</button>
+            <button id="pause" style="display: none">stop</button>
         </div>
         <div class="input" style="line-height: 30px">
-            <button id="destroy">销毁</button>
+            <button id="destroy">destroy</button>
         </div>
     </div>
 </div>
@@ -113,20 +113,20 @@
     var $container = document.getElementById('container');
     var $destroy = document.getElementById('destroy');
 
-    var showOperateBtns = false; // 是否显示按钮
+    var showOperateBtns = false; // Whether to display the button
     var forceNoOffscreen = true; //
     var jessibuca = null;
 
     function create() {
         jessibuca = new Jessibuca({
             container: $container,
-            videoBuffer: 0.2, // 缓存时长
+            videoBuffer: 0.2, // Cache duration
             isResize: false,
             text: "",
             loadingText: "",
             useMSE: false,
             debug: true,
-            showBandwidth: showOperateBtns, // 显示网速
+            showBandwidth: showOperateBtns, // show internet speed
             operateBtns: {
                 fullscreen: showOperateBtns,
                 screenshot: showOperateBtns,
